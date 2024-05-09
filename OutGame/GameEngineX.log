@@ -1,0 +1,12 @@
+﻿  Actor.cpp
+  CircleRenderComponent.cpp
+  Component.cpp
+  RendererComponent.cpp
+  TransformComponent.cpp
+  Game.cpp
+  Main.cpp
+  Generating Code...
+EngineXd.lib(Engine.obj) : warning LNK4099: PDB '' was not found with 'EngineXd.lib(Engine.obj)' or at ''; linking object as if no debug info
+EngineXd.lib(RenderPacket.obj) : warning LNK4099: PDB '' was not found with 'EngineXd.lib(RenderPacket.obj)' or at ''; linking object as if no debug info
+EngineXd.lib(System.obj) : warning LNK4099: PDB '' was not found with 'EngineXd.lib(System.obj)' or at ''; linking object as if no debug info
+  GameEngineX.vcxproj -> C:\Users\Public\Repos\Term3\C++\Engine\TTGCP_FuFu_Engine\Build\GameEngineXd.exe

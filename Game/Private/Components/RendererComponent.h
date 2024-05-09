@@ -1,17 +1,24 @@
 #pragma once
 #include "Component.h"
-#include "../../Engine/EngineTypes.h"
+#include "Engine/Public/EngineTypes.h"
+
+class exEngineInterface;
 
 class RendererComponent : public Component
 {
 public:
 
 	RendererComponent() = delete;
-	RendererComponent(exColour colour, std::shared_ptr<Actor> owner);
+	RendererComponent(std::shared_ptr<Actor> owner, exColor colour);
 
-	virtual void Render(/*TODO*/) = 0;
+	virtual void Render(exEngineInterface* engineInterface) = 0;
 
-private:
+	// Getter
+	exColor GetColour() const;
+	// Setters
+	void SetColour(exColor inColour);
 
-	exColour mColour;
+protected:
+
+	exColor mColour;
 };

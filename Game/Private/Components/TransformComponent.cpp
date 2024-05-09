@@ -1,6 +1,6 @@
 #include "TransformComponent.h"
 
-TransformComponent::TransformComponent(exVector2 location, std::shared_ptr<Actor> owner) :
+TransformComponent::TransformComponent(std::shared_ptr<Actor> owner, exVector2 location) :
     Component(owner),
     mLocation(location)
 {

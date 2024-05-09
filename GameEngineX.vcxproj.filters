@@ -34,6 +34,14 @@
     <ClInclude Include="Engine\Public\SDL.h">
       <Filter>Source Files\Engine\Public</Filter>
     </ClInclude>
+    <ClInclude Include="Game\Private\GameCore\ComponentTypes.h" />
+    <ClInclude Include="Game\Private\GameCore\Utils.h" />
+    <ClInclude Include="Game\Private\Components\CircleRenderComponent.h" />
+    <ClInclude Include="Game\Private\Actors\Actor.h" />
+    <ClInclude Include="Game\Private\Components\Component.h" />
+    <ClInclude Include="Game\Private\Components\RendererComponent.h" />
+    <ClInclude Include="Game\Private\Components\TransformComponent.h" />
+    <ClInclude Include="Game\Private\Game.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game\Private\Main.cpp">
@@ -41,6 +49,21 @@
     </ClCompile>
     <ClCompile Include="Game\Private\Game.cpp">
       <Filter>Source Files\Game\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Private\Components\CircleRenderComponent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Private\Actors\Actor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Private\Components\Component.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Private\Components\RendererComponent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Private\Components\TransformComponent.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
