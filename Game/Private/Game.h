@@ -44,5 +44,6 @@ private:
 	exVector2					mTextPosition;
 
 	std::shared_ptr<Actor>      GameDesignersHead;
+	std::shared_ptr<Actor>      GameDesignersTorso;
 
 };

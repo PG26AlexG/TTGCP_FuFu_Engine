@@ -42,6 +42,7 @@
     <ClInclude Include="Game\Private\Components\RendererComponent.h" />
     <ClInclude Include="Game\Private\Components\TransformComponent.h" />
     <ClInclude Include="Game\Private\Game.h" />
+    <ClInclude Include="Game\Private\Components\BoxRenderComponent.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game\Private\Main.cpp">
@@ -63,6 +64,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Game\Private\Components\TransformComponent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Private\Components\BoxRenderComponent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

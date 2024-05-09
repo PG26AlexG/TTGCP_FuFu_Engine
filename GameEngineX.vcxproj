@@ -143,6 +143,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Game\Private\Components\BoxRenderComponent.h" />
     <ClInclude Include="Game\Private\Actors\Actor.h" />
     <ClInclude Include="Game\Private\Components\CircleRenderComponent.h" />
     <ClInclude Include="Engine\Public\EngineInterface.h" />
@@ -157,6 +158,7 @@
     <ClInclude Include="Game\Public\GameInterface.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Game\Private\Components\BoxRenderComponent.cpp" />
     <ClCompile Include="Game\Private\Actors\Actor.cpp" />
     <ClCompile Include="Game\Private\Components\CircleRenderComponent.cpp" />
     <ClCompile Include="Game\Private\Components\Component.cpp" />

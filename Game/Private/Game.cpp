@@ -51,6 +51,10 @@ void MyGame::Initialize(exEngineInterface* pEngine)
 	GameDesignersHead = std::make_shared<Actor>();
 	GameDesignersHead->AddComponentOfType<CircleRenderComponent>(exColor{ 255, 255, 0, 255 }, 50.0f);
 	GameDesignersHead->AddComponentOfType<TransformComponent>(exVector2{ 500.0f, 500.0f });
+
+	GameDesignersTorso = std::make_shared<Actor>();
+	GameDesignersTorso->AddComponentOfType<BoxRenderComponent>(exColor{ 0, 255, 0, 255 }, 50, 100);
+	GameDesignersTorso->AddComponentOfType<TransformComponent>(exVector2{ 500.0f, 400.0f });
 }
 
 //-----------------------------------------------------------------
@@ -158,6 +162,11 @@ void MyGame::Run(float fDeltaT)
 	mEngine->DrawText(mFontID, mTextPosition, "VFS", c, 0);
 
 	if (std::shared_ptr<RendererComponent> rendererComp = GameDesignersHead->FindComponentOfType<RendererComponent>())
+	{
+		rendererComp->Render(mEngine);
+	}
+
+	if (std::shared_ptr<RendererComponent> rendererComp = GameDesignersTorso->FindComponentOfType<RendererComponent>())
 	{
 		rendererComp->Render(mEngine);
 	}
