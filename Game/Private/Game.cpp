@@ -13,6 +13,7 @@
 #include "Game/Private/Actors/Actor.h"
 #include "Game/Private/GameCore/ComponentTypes.h"
 #include "Game/Singletons/RenderEngine.h"
+#include "Game/Singletons/PhysicsEngine.h"
 
 //-----------------------------------------------------------------
 //-----------------------------------------------------------------
@@ -56,6 +57,8 @@ void MyGame::Initialize(exEngineInterface* pEngine)
 	GameDesignersTorso = std::make_shared<Actor>();
 	GameDesignersTorso->AddComponentOfType<BoxRenderComponent>(exColor{ 0, 255, 0, 255 }, 50, 100);
 	GameDesignersTorso->AddComponentOfType<TransformComponent>(exVector2{ 500.0f, 400.0f });
+
+	GameDesignersHead->AddComponentOfType<PhysicsComponent>(false, true, exVector2{ -2.0f, 0.0f });
 }
 
 //-----------------------------------------------------------------
@@ -166,4 +169,11 @@ void MyGame::Run(float fDeltaT)
 	{
 		RENDER_ENGINE->Render(mEngine);
 	}
+
+	/*if (std::shared_ptr<PhysicsComponent> physicsComponent = GameDesignersHead->FindComponentOfType<PhysicsComponent>())
+	{
+		physicsComponent->Physics();
+	}*/
+
+	PHYSICS_ENGINE->Physics();
 }

@@ -13,6 +13,21 @@
 struct exVector2
 {
 	float x, y;
+
+	exVector2 operator-(const exVector2& other) const
+	{
+		return { this->x - other.x, this->y - other.y };
+	}
+
+	exVector2 operator+(const exVector2& other) const
+	{
+		return { this->x + other.x, this->y + other.y };
+	}
+
+	exVector2 operator*(const float& multiplicationFactor)
+	{
+		return { this->x * multiplicationFactor, this->y * multiplicationFactor };
+	}
 };
 
 //-----------------------------------------------------------------

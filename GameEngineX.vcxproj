@@ -157,6 +157,8 @@
     <ClInclude Include="Game\Private\GameCore\Utils.h" />
     <ClInclude Include="Game\Public\GameInterface.h" />
     <ClInclude Include="Game\Singletons\RenderEngine.h" />
+    <ClInclude Include="Game\Private\Components\PhysicsComponent.h" />
+    <ClInclude Include="Game\Singletons\PhysicsEngine.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game\Private\Components\BoxRenderComponent.cpp" />
@@ -168,6 +170,8 @@
     <ClCompile Include="Game\Private\Game.cpp" />
     <ClCompile Include="Game\Private\Main.cpp" />
     <ClCompile Include="Game\Singletons\RenderEngine.cpp" />
+    <ClCompile Include="Game\Private\Components\PhysicsComponent.cpp" />
+    <ClCompile Include="Game\Singletons\PhysicsEngine.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
