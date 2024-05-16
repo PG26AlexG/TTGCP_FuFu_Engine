@@ -1,5 +1,6 @@
 #pragma once
 #include "Game/Private/GameCore/Utils.h"
+#include <Type_traits>
 
 
 // forward declaration

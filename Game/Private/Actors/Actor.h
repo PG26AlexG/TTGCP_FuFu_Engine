@@ -16,12 +16,15 @@ public:
 	virtual void EndPlay();
 	virtual void Tick(float deltaSeconds);
 
-	template<class ComponentType, typename ...Args>
+	template<std::derived_from<Component> ComponentType, typename ...Args>
 	std::shared_ptr<ComponentType> AddComponentOfType(Args... arguments)
 	{
 		std::shared_ptr<ComponentType> newComponent = std::make_shared<ComponentType>(shared_from_this(), arguments...);
 
 		mComponents.push_back(newComponent);
+
+		newComponent->InitializeComponent();
+
 		return newComponent;
 	}
 

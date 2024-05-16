@@ -43,6 +43,7 @@
     <ClInclude Include="Game\Private\Components\TransformComponent.h" />
     <ClInclude Include="Game\Private\Game.h" />
     <ClInclude Include="Game\Private\Components\BoxRenderComponent.h" />
+    <ClInclude Include="Game\Singletons\RenderEngine.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game\Private\Main.cpp">
@@ -67,6 +68,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Game\Private\Components\BoxRenderComponent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Singletons\RenderEngine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

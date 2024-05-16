@@ -12,6 +12,7 @@
 #include "Engine/Public/SDL.h"
 #include "Game/Private/Actors/Actor.h"
 #include "Game/Private/GameCore/ComponentTypes.h"
+#include "Game/Singletons/RenderEngine.h"
 
 //-----------------------------------------------------------------
 //-----------------------------------------------------------------
@@ -160,14 +161,9 @@ void MyGame::Run(float fDeltaT)
 	mEngine->DrawCircle(p1, r, c, 2);
 
 	mEngine->DrawText(mFontID, mTextPosition, "VFS", c, 0);
-
-	if (std::shared_ptr<RendererComponent> rendererComp = GameDesignersHead->FindComponentOfType<RendererComponent>())
+	
+	if (mEngine)
 	{
-		rendererComp->Render(mEngine);
-	}
-
-	if (std::shared_ptr<RendererComponent> rendererComp = GameDesignersTorso->FindComponentOfType<RendererComponent>())
-	{
-		rendererComp->Render(mEngine);
+		RENDER_ENGINE->Render(mEngine);
 	}
 }
