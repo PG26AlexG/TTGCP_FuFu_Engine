@@ -26,6 +26,22 @@ void PhysicsEngine::Physics()
         if (!componentToPhysics.expired())
         {
             componentToPhysics.lock()->Physics();
+
+            for (std::weak_ptr<PhysicsComponent> otherPhysicsComponent : mPhysicsComponentList)
+            {
+                if (!otherPhysicsComponent.expired())
+                {
+                    if (otherPhysicsComponent.lock() != componentToPhysics.lock())
+                    {
+                        if (componentToPhysics.lock()->IsCollisionDetected(otherPhysicsComponent.lock()))
+                        {
+                            // @TODO change resolution based on requirement
+                            const exVector2 newVelocity = componentToPhysics.lock()->GetVelocity() * -1.0f;
+                            componentToPhysics.lock()->SetVelocity(newVelocity);
+                        }
+                    }
+                }
+            }
         }
     }
 }

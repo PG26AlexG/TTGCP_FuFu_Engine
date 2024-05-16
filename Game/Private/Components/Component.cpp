@@ -16,3 +16,8 @@ void Component::InitializeComponent()
 void Component::TickComponent(float deltaSeconds)
 {
 }
+
+std::shared_ptr<Actor> Component::GetOwner() const
+{
+	return mOwner;
+}

@@ -18,6 +18,8 @@ public:
 	virtual void InitializeComponent();
 	virtual void TickComponent(float deltaSeconds);
 
+	std::shared_ptr<Actor> GetOwner() const;
+
 protected:
 
 	std::shared_ptr<Actor> mOwner;

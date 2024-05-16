@@ -24,6 +24,8 @@ public:
 	exVector2 GetVelocity() const;
 	void SetVelocity(const exVector2 inVelocity);
 
+	virtual bool IsCollisionDetected(std::shared_ptr<PhysicsComponent> otherComponent);
+
 protected:
 
 	bool mIsStatic;

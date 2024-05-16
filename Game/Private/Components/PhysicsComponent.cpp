@@ -43,3 +43,8 @@ void PhysicsComponent::SetVelocity(const exVector2 inVelocity)
 {
 	mVelocity = inVelocity;
 }
+
+bool PhysicsComponent::IsCollisionDetected(std::shared_ptr<PhysicsComponent> otherComponent)
+{
+	return false;
+}

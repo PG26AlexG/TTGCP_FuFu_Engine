@@ -46,6 +46,7 @@
     <ClInclude Include="Game\Singletons\RenderEngine.h" />
     <ClInclude Include="Game\Private\Components\PhysicsComponent.h" />
     <ClInclude Include="Game\Singletons\PhysicsEngine.h" />
+    <ClInclude Include="Game\Private\Components\CircleColliderPhysicsComponent.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game\Private\Main.cpp">
@@ -79,6 +80,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Game\Singletons\PhysicsEngine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Private\Components\CircleColliderPhysicsComponent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

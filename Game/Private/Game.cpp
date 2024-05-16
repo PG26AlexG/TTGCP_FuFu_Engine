@@ -52,13 +52,17 @@ void MyGame::Initialize(exEngineInterface* pEngine)
 
 	GameDesignersHead = std::make_shared<Actor>();
 	GameDesignersHead->AddComponentOfType<CircleRenderComponent>(exColor{ 255, 255, 0, 255 }, 50.0f);
-	GameDesignersHead->AddComponentOfType<TransformComponent>(exVector2{ 500.0f, 500.0f });
+	GameDesignersHead->AddComponentOfType<TransformComponent>(exVector2{ 700.0f, 400.0f });
+	GameDesignersHead->AddComponentOfType<CircleColliderPhysicsComponent>(50.0f, exVector2{ -1.0f, 0.0f });
 
-	GameDesignersTorso = std::make_shared<Actor>();
-	GameDesignersTorso->AddComponentOfType<BoxRenderComponent>(exColor{ 0, 255, 0, 255 }, 50, 100);
-	GameDesignersTorso->AddComponentOfType<TransformComponent>(exVector2{ 500.0f, 400.0f });
+	HenrysHead = std::make_shared<Actor>();
+	HenrysHead->AddComponentOfType<CircleRenderComponent>(exColor{ 255, 255, 0, 255 }, 150.0f);
+	HenrysHead->AddComponentOfType<TransformComponent>(exVector2{ 100.0f, 400.0f });
+	HenrysHead->AddComponentOfType<CircleColliderPhysicsComponent>(150.0f, exVector2{ 1.0f, 0.0f });
 
-	GameDesignersHead->AddComponentOfType<PhysicsComponent>(false, true, exVector2{ -2.0f, 0.0f });
+	//GameDesignersTorso = std::make_shared<Actor>();
+	//GameDesignersTorso->AddComponentOfType<BoxRenderComponent>(exColor{ 0, 255, 0, 255 }, 50, 100);
+	//GameDesignersTorso->AddComponentOfType<TransformComponent>(exVector2{ 500.0f, 400.0f });
 }
 
 //-----------------------------------------------------------------
