@@ -47,6 +47,12 @@
     <ClInclude Include="Game\Private\Components\PhysicsComponent.h" />
     <ClInclude Include="Game\Singletons\PhysicsEngine.h" />
     <ClInclude Include="Game\Private\Components\CircleColliderPhysicsComponent.h" />
+    <ClInclude Include="Game\Singletons\WorldManager.h" />
+    <ClInclude Include="Game\Private\GameCore\ActorTypes.h" />
+    <ClInclude Include="Game\Private\Actors\Football.h" />
+    <ClInclude Include="Game\Private\Actors\Box.h" />
+    <ClInclude Include="Game\Private\Components\LineRenderComponent.h" />
+    <ClInclude Include="Game\Private\Actors\Line.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game\Private\Main.cpp">
@@ -83,6 +89,21 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Game\Private\Components\CircleColliderPhysicsComponent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Singletons\WorldManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Private\Actors\Football.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Private\Actors\Box.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Private\Components\LineRenderComponent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Private\Actors\Line.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

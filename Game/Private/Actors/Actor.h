@@ -6,15 +6,24 @@
 
 class Actor : public std::enable_shared_from_this<Actor>
 {
+	friend class WorldManager;
+
+protected:
+
+	// List of components added to the actor
+	ComponentList mComponents;
+
 public:
 
 	Actor();
 	~Actor();
 
 	// overridable functions
-	virtual void BeingPlay();
+	virtual void BeginPlay();
 	virtual void EndPlay();
 	virtual void Tick(float deltaSeconds);
+
+	virtual void InitializeActor(const exVector2 spawnPosition);
 
 	template<std::derived_from<Component> ComponentType, typename ...Args>
 	std::shared_ptr<ComponentType> AddComponentOfType(Args... arguments)
@@ -45,6 +54,5 @@ public:
 
 private:
 
-	// List of components added to the actor
-	ComponentList mComponents;
+	std::shared_ptr<TransformComponent> mTransformComponent;
 };

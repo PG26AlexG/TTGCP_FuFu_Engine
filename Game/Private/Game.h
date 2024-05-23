@@ -14,6 +14,9 @@
 //-----------------------------------------------------------------
 
 class Actor;
+class Football;
+class Box       ;
+class Line        ;
 
 class MyGame : public exGameInterface
 {
@@ -43,8 +46,8 @@ private:
 
 	exVector2					mTextPosition;
 
-	std::shared_ptr<Actor>      GameDesignersHead;
-	std::shared_ptr<Actor>		HenrysHead;
-	std::shared_ptr<Actor>      GameDesignersTorso;
-
+	std::shared_ptr<Football>   GameDesignersHead;
+	std::shared_ptr<Football>	HenrysHead;
+	std::shared_ptr<Box>      GameDesignersTorso;
+	std::shared_ptr<Line>     GameDesignersLeftLeg;
 };

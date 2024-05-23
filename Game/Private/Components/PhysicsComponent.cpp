@@ -48,3 +48,8 @@ bool PhysicsComponent::IsCollisionDetected(std::shared_ptr<PhysicsComponent> oth
 {
 	return false;
 }
+
+void PhysicsComponent::ListenForCollision(CollisionEventSignature& delegateToAdd)
+{
+	mCollisionEvents.push_back(delegateToAdd);
+}

@@ -10,10 +10,11 @@
 
 #include "Engine/Public/EngineInterface.h"
 #include "Engine/Public/SDL.h"
-#include "Game/Private/Actors/Actor.h"
+#include "Game/Private/GameCore/ActorTypes.h"
 #include "Game/Private/GameCore/ComponentTypes.h"
 #include "Game/Singletons/RenderEngine.h"
 #include "Game/Singletons/PhysicsEngine.h"
+#include "Game/Singletons/WorldManager.h"
 
 //-----------------------------------------------------------------
 //-----------------------------------------------------------------
@@ -50,19 +51,14 @@ void MyGame::Initialize(exEngineInterface* pEngine)
 	mTextPosition.x = 50.0f;
 	mTextPosition.y = 50.0f;
 
-	GameDesignersHead = std::make_shared<Actor>();
-	GameDesignersHead->AddComponentOfType<CircleRenderComponent>(exColor{ 255, 255, 0, 255 }, 50.0f);
-	GameDesignersHead->AddComponentOfType<TransformComponent>(exVector2{ 700.0f, 400.0f });
-	GameDesignersHead->AddComponentOfType<CircleColliderPhysicsComponent>(50.0f, exVector2{ -1.0f, 0.0f });
+	GameDesignersHead = WORLD->SpawnActorOfClass<Football>(exVector2{ 700.0f, 400.0f }, exColor{ 255, 255, 0, 255 }, 50.0f);
 
-	HenrysHead = std::make_shared<Actor>();
-	HenrysHead->AddComponentOfType<CircleRenderComponent>(exColor{ 255, 255, 0, 255 }, 150.0f);
-	HenrysHead->AddComponentOfType<TransformComponent>(exVector2{ 100.0f, 400.0f });
-	HenrysHead->AddComponentOfType<CircleColliderPhysicsComponent>(150.0f, exVector2{ 1.0f, 0.0f });
+	
+	//HenrysHead = WORLD->SpawnActorOfClass<Football>(exVector2{ 100.0f, 400.0f }, exColor{ 255, 255, 0, 255 }, 150.0f);
 
-	//GameDesignersTorso = std::make_shared<Actor>();
-	//GameDesignersTorso->AddComponentOfType<BoxRenderComponent>(exColor{ 0, 255, 0, 255 }, 50, 100);
-	//GameDesignersTorso->AddComponentOfType<TransformComponent>(exVector2{ 500.0f, 400.0f });
+	GameDesignersTorso = WORLD->SpawnActorOfClass<Box>(exVector2{ 500.0f, 400.0f }, exColor{ 0, 255, 0, 255 }, 250.0f, 100.0f);
+
+	GameDesignersLeftLeg = WORLD->SpawnActorOfClass<Line>(exVector2{ 200.0f, 400.0f }, exColor{ 0, 0, 0, 255 }, exVector2{ 200.0f, 400.0f }, exVector2{ 400.0f, 400.0f });
 }
 
 //-----------------------------------------------------------------
@@ -109,10 +105,16 @@ void MyGame::Run(float fDeltaT)
 {
 	if (mUp)
 	{
+		GameDesignersHead->SetVelocity(exVector2(-1, 0));
+		GameDesignersTorso->SetVelocity(exVector2(1, 0));
+		GameDesignersLeftLeg->SetVelocity(exVector2(0, -1));
 		mTextPosition.y -= 40.0f * fDeltaT;
 	}
 	else if (mDown)
 	{
+		GameDesignersHead->SetVelocity(exVector2(0, 1));
+		GameDesignersTorso->SetVelocity(exVector2(0, 1));
+		GameDesignersLeftLeg->SetVelocity(exVector2(0, 1));
 		mTextPosition.y += 40.0f * fDeltaT;
 	}
 

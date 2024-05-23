@@ -1,3 +1,5 @@
+C:\Users\Public\Repos\Term3\C++\Engine\TTGCP_FuFu_Engine\Game\Private\Actors\Box.cpp;C:\Users\Public\Repos\Term3\C++\Engine\TTGCP_FuFu_Engine\OutGame\Box.obj
+C:\Users\Public\Repos\Term3\C++\Engine\TTGCP_FuFu_Engine\Game\Private\Actors\Football.cpp;C:\Users\Public\Repos\Term3\C++\Engine\TTGCP_FuFu_Engine\OutGame\Football.obj
 C:\Users\Public\Repos\Term3\C++\Engine\TTGCP_FuFu_Engine\Game\Private\Components\CircleColliderPhysicsComponent.cpp;C:\Users\Public\Repos\Term3\C++\Engine\TTGCP_FuFu_Engine\OutGame\CircleColliderPhysicsComponent.obj
 C:\Users\Public\Repos\Term3\C++\Engine\TTGCP_FuFu_Engine\Game\Private\Components\BoxRenderComponent.cpp;C:\Users\Public\Repos\Term3\C++\Engine\TTGCP_FuFu_Engine\OutGame\BoxRenderComponent.obj
 C:\Users\Public\Repos\Term3\C++\Engine\TTGCP_FuFu_Engine\Game\Private\Actors\Actor.cpp;C:\Users\Public\Repos\Term3\C++\Engine\TTGCP_FuFu_Engine\OutGame\Actor.obj
@@ -10,3 +12,6 @@ C:\Users\Public\Repos\Term3\C++\Engine\TTGCP_FuFu_Engine\Game\Private\Main.cpp;C
 C:\Users\Public\Repos\Term3\C++\Engine\TTGCP_FuFu_Engine\Game\Singletons\RenderEngine.cpp;C:\Users\Public\Repos\Term3\C++\Engine\TTGCP_FuFu_Engine\OutGame\RenderEngine.obj
 C:\Users\Public\Repos\Term3\C++\Engine\TTGCP_FuFu_Engine\Game\Private\Components\PhysicsComponent.cpp;C:\Users\Public\Repos\Term3\C++\Engine\TTGCP_FuFu_Engine\OutGame\PhysicsComponent.obj
 C:\Users\Public\Repos\Term3\C++\Engine\TTGCP_FuFu_Engine\Game\Singletons\PhysicsEngine.cpp;C:\Users\Public\Repos\Term3\C++\Engine\TTGCP_FuFu_Engine\OutGame\PhysicsEngine.obj
+C:\Users\Public\Repos\Term3\C++\Engine\TTGCP_FuFu_Engine\Game\Singletons\WorldManager.cpp;C:\Users\Public\Repos\Term3\C++\Engine\TTGCP_FuFu_Engine\OutGame\WorldManager.obj
+C:\Users\Public\Repos\Term3\C++\Engine\TTGCP_FuFu_Engine\Game\Private\Components\LineRenderComponent.cpp;C:\Users\Public\Repos\Term3\C++\Engine\TTGCP_FuFu_Engine\OutGame\LineRenderComponent.obj
+C:\Users\Public\Repos\Term3\C++\Engine\TTGCP_FuFu_Engine\Game\Private\Actors\Line.cpp;C:\Users\Public\Repos\Term3\C++\Engine\TTGCP_FuFu_Engine\OutGame\Line.obj

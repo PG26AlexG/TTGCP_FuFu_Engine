@@ -4,7 +4,6 @@
 
 class CircleRenderComponent : public RendererComponent
 {
-
 public:
 
 	CircleRenderComponent() = delete;

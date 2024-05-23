@@ -143,6 +143,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Game\Private\Actors\Box.h" />
+    <ClInclude Include="Game\Private\Actors\Football.h" />
     <ClInclude Include="Game\Private\Components\CircleColliderPhysicsComponent.h" />
     <ClInclude Include="Game\Private\Components\BoxRenderComponent.h" />
     <ClInclude Include="Game\Private\Actors\Actor.h" />
@@ -154,14 +156,20 @@
     <ClInclude Include="Game\Private\Components\RendererComponent.h" />
     <ClInclude Include="Game\Private\Components\TransformComponent.h" />
     <ClInclude Include="Game\Private\Game.h" />
+    <ClInclude Include="Game\Private\GameCore\ActorTypes.h" />
     <ClInclude Include="Game\Private\GameCore\ComponentTypes.h" />
     <ClInclude Include="Game\Private\GameCore\Utils.h" />
     <ClInclude Include="Game\Public\GameInterface.h" />
     <ClInclude Include="Game\Singletons\RenderEngine.h" />
     <ClInclude Include="Game\Private\Components\PhysicsComponent.h" />
     <ClInclude Include="Game\Singletons\PhysicsEngine.h" />
+    <ClInclude Include="Game\Singletons\WorldManager.h" />
+    <ClInclude Include="Game\Private\Components\LineRenderComponent.h" />
+    <ClInclude Include="Game\Private\Actors\Line.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Game\Private\Actors\Box.cpp" />
+    <ClCompile Include="Game\Private\Actors\Football.cpp" />
     <ClCompile Include="Game\Private\Components\CircleColliderPhysicsComponent.cpp" />
     <ClCompile Include="Game\Private\Components\BoxRenderComponent.cpp" />
     <ClCompile Include="Game\Private\Actors\Actor.cpp" />
@@ -174,6 +182,9 @@
     <ClCompile Include="Game\Singletons\RenderEngine.cpp" />
     <ClCompile Include="Game\Private\Components\PhysicsComponent.cpp" />
     <ClCompile Include="Game\Singletons\PhysicsEngine.cpp" />
+    <ClCompile Include="Game\Singletons\WorldManager.cpp" />
+    <ClCompile Include="Game\Private\Components\LineRenderComponent.cpp" />
+    <ClCompile Include="Game\Private\Actors\Line.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -8,7 +8,7 @@ Actor::~Actor()
 {
 }
 
-void Actor::BeingPlay()
+void Actor::BeginPlay()
 {
 }
 
@@ -18,4 +18,9 @@ void Actor::EndPlay()
 
 void Actor::Tick(float deltaSeconds)
 {
+}
+
+void Actor::InitializeActor(const exVector2 spawnPosition)
+{
+	mTransformComponent = AddComponentOfType<TransformComponent>(spawnPosition);
 }
