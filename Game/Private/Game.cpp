@@ -174,12 +174,12 @@ void MyGame::Run(float fDeltaT)
 	if (mEngine)
 	{
 		RENDER_ENGINE->Render(mEngine);
+
+		PHYSICS_ENGINE->Physics();
 	}
 
 	/*if (std::shared_ptr<PhysicsComponent> physicsComponent = GameDesignersHead->FindComponentOfType<PhysicsComponent>())
 	{
 		physicsComponent->Physics();
 	}*/
-
-	PHYSICS_ENGINE->Physics();
 }

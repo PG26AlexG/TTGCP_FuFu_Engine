@@ -19,7 +19,7 @@ void RenderEngine::AddRenderingComponent(std::shared_ptr<RendererComponent> comp
     mRenderComponentList.push_back(componentToAdd);
 }
 
-void RenderEngine::Render(exEngineInterface* engineInterface)
+void DrawAsync(std::list<std::weak_ptr<RendererComponent>> mRenderComponentList, exEngineInterface* engineInterface)
 {
     for (std::weak_ptr<RendererComponent> componentToRender : mRenderComponentList)
     {
@@ -28,6 +28,15 @@ void RenderEngine::Render(exEngineInterface* engineInterface)
             componentToRender.lock()->Render(engineInterface);
         }
     }
+}
+
+void RenderEngine::Render(exEngineInterface* engineInterface)
+{
+    std::list<std::weak_ptr<RendererComponent>> componentList = mRenderComponentList;
+       
+    std::thread drawAsync(DrawAsync, mRenderComponentList, engineInterface);
+
+    drawAsync.join();
 }
 
 RenderEngine::RenderEngine()
