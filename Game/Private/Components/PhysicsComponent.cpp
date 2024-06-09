@@ -23,6 +23,11 @@ void PhysicsComponent::Physics()
 			const exVector2 newPosition = transformComponent->GetPosition() + mVelocity;
 			// @TODO add gravity
 			transformComponent->SetPosition(newPosition);
+
+			if (mIsGravityEnabled)
+			{
+				
+			}
 		}
 	}
 }
@@ -42,6 +47,12 @@ exVector2 PhysicsComponent::GetVelocity() const
 void PhysicsComponent::SetVelocity(const exVector2 inVelocity)
 {
 	mVelocity = inVelocity;
+}
+
+void PhysicsComponent::AddVelocity (const exVector2 inVelocity)
+{
+	mVelocity.x += inVelocity.x;
+	mVelocity.y += inVelocity.y;
 }
 
 bool PhysicsComponent::IsCollisionDetected(std::shared_ptr<PhysicsComponent> otherComponent)
