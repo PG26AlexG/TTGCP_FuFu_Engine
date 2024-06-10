@@ -46,8 +46,8 @@ private:
 
 	exVector2					mTextPosition;
 
-	std::shared_ptr<Football>   GameDesignersHead;
+	std::shared_ptr<Football>   Runner;
 	std::shared_ptr<Football>	HenrysHead;
-	std::shared_ptr<Box>      GameDesignersTorso;
+	std::shared_ptr<Box>      Ground;
 	std::shared_ptr<Line>     GameDesignersLeftLeg;
 };

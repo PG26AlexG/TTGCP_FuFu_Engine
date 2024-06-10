@@ -17,6 +17,12 @@ public:
     static std::shared_ptr<Input> GetInstance();
     int GetCurrentKeysDown() const;
 
+    bool GetUpDown();
+    bool GetDownDown();
+    bool GetLeftDown();
+    bool GetRightDown();
+    bool GetConfirmDown();
+
     // Setters
     void CheckCurrentInputs();
     void ClearCurrentInputs();
@@ -25,5 +31,5 @@ private:
     // singleton referance
     static std::shared_ptr<Input> instance;
 
-    unsigned int inputs = 0;
+    unsigned int mInputs = 0;
 };

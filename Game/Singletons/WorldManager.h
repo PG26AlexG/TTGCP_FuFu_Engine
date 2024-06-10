@@ -8,8 +8,9 @@
 class WorldManager
 {
 public:
-
 	static WorldManager* GetInstance();
+
+	void TickActors (float deltaSeconds);
 
 	template<std::derived_from<Actor> ActorType, typename ...Args>
 	std::shared_ptr<ActorType> SpawnActorOfClass(exVector2 spawnLocation, Args... arguments)
@@ -18,13 +19,15 @@ public:
 
 		newActor->InitializeActor(spawnLocation);
 
+		mActors.push_back(newActor);
 		return newActor;
 	}
 
 private:
 
 	WorldManager();
-
+	
+	std::list<std::shared_ptr<Actor>> mActors;
 	static WorldManager* sInstance;
 };
 

@@ -8,6 +8,7 @@
 
 #include "Game/Private/Game.h"
 
+#include "Components/RunnerComponent.h"
 #include "Engine/Public/EngineInterface.h"
 #include "Engine/Public/SDL.h"
 #include "Game/Private/GameCore/ActorTypes.h"
@@ -51,14 +52,17 @@ void MyGame::Initialize(exEngineInterface* pEngine)
 	mTextPosition.x = 50.0f;
 	mTextPosition.y = 50.0f;
 
-	GameDesignersHead = WORLD->SpawnActorOfClass<Football>(exVector2{ 700.0f, 400.0f }, exColor{ 255, 255, 0, 255 }, 50.0f);
+	Runner = WORLD->SpawnActorOfClass<Football>(exVector2{ 700.0f, 400.0f }, exColor{ 255, 255, 0, 255 }, 50.0f);
 
-	
+	Runner->AddComponentOfType<RunnerComponent>(5);
+	Runner->SetVelocity(exVector2(0,0));
 	//HenrysHead = WORLD->SpawnActorOfClass<Football>(exVector2{ 100.0f, 400.0f }, exColor{ 255, 255, 0, 255 }, 150.0f);
 
-	GameDesignersTorso = WORLD->SpawnActorOfClass<Box>(exVector2{ 500.0f, 400.0f }, exColor{ 0, 255, 0, 255 }, 250.0f, 100.0f);
-
-	GameDesignersLeftLeg = WORLD->SpawnActorOfClass<Line>(exVector2{ 200.0f, 400.0f }, exColor{ 0, 0, 0, 255 }, exVector2{ 200.0f, 400.0f }, exVector2{ 400.0f, 400.0f });
+	Ground = WORLD->SpawnActorOfClass<Box>(exVector2{ 500.0f, 600.0f }, exColor{ 0, 255, 0, 255 }, 1000.0f, 100.0f);
+	Ground->SetVelocity(exVector2(0,0));
+	Ground->FindComponentOfType<PhysicsComponent>()->SetGravityEnabled(false);
+	
+	//GameDesignersLeftLeg = WORLD->SpawnActorOfClass<Line>(exVector2{ 200.0f, 400.0f }, exColor{ 0, 0, 0, 255 }, exVector2{ 200.0f, 400.0f }, exVector2{ 400.0f, 400.0f });
 }
 
 //-----------------------------------------------------------------
@@ -103,74 +107,9 @@ void MyGame::OnEventsConsumed()
 
 void MyGame::Run(float fDeltaT)
 {
-	if (mUp)
-	{
-		GameDesignersHead->SetVelocity(exVector2(-1, 0));
-		GameDesignersTorso->SetVelocity(exVector2(1, 0));
-		GameDesignersLeftLeg->SetVelocity(exVector2(0, -1));
-		mTextPosition.y -= 40.0f * fDeltaT;
-	}
-	else if (mDown)
-	{
-		GameDesignersHead->SetVelocity(exVector2(0, 1));
-		GameDesignersTorso->SetVelocity(exVector2(0, 1));
-		GameDesignersLeftLeg->SetVelocity(exVector2(0, 1));
-		mTextPosition.y += 40.0f * fDeltaT;
-	}
+	Input::GetInstance()->CheckCurrentInputs();
 
-	exVector2 p1, p2;
-	exColor c;
-	float r;
 
-	c.mColor[0] = 255;
-	c.mColor[1] = 0;
-	c.mColor[2] = 255;
-	c.mColor[3] = 255;
-
-	p1.x = 175.0f;
-	p1.y = 175.0f;
-
-	r = 25.0f;
-
-	mEngine->DrawLineCircle(p1, r, c, 0);
-
-	// in class draw elements
-	// params ({position}, {radius}, {colour}, {z-index})
-	//mEngine->DrawCircle({(kViewportWidth * 0.5f), (kViewportHeight * 0.5f)}, 50, {255, 0, 0, 255}, 1);
-	float length = 100;
-	mEngine->DrawLine({ (kViewportWidth * 0.5f - length), (kViewportHeight * 0.5f) }, { (kViewportWidth * 0.5f + length), (kViewportHeight * 0.5f) }, { 0, 0, 0, 255 }, 1);
-
-	p1.x = 100.0f;
-	p1.y = 100.0f;
-
-	p2.x = 200.0f;
-	p2.y = 200.0f;
-
-	c.mColor[0] = 255;
-	c.mColor[1] = 0;
-	c.mColor[2] = 0;
-
-	mEngine->DrawBox(p1, p2, c, 1);
-
-	p1.x = 400.0f;
-	p1.y = 400.0f;
-
-	p2.x = 500.0f;
-	p2.y = 500.0f;
-
-	mEngine->DrawLineBox(p1, p2, c, 1);
-
-	p1.x = 400.0f;
-	p1.y = 400.0f;
-
-	c.mColor[0] = 0;
-	c.mColor[1] = 0;
-	c.mColor[2] = 0;
-
-	mEngine->DrawCircle(p1, r, c, 2);
-
-	mEngine->DrawText(mFontID, mTextPosition, "VFS", c, 0);
-	
 	if (mEngine)
 	{
 		RENDER_ENGINE->Render(mEngine);
@@ -178,8 +117,10 @@ void MyGame::Run(float fDeltaT)
 		PHYSICS_ENGINE->Physics();
 	}
 
-	/*if (std::shared_ptr<PhysicsComponent> physicsComponent = GameDesignersHead->FindComponentOfType<PhysicsComponent>())
+	if (WORLD)
 	{
-		physicsComponent->Physics();
-	}*/
+		WORLD->TickActors(fDeltaT);
+	}
+
+	Input::GetInstance()->ClearCurrentInputs();
 }

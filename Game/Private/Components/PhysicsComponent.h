@@ -32,11 +32,14 @@ public:
 	virtual bool IsCollisionDetected(std::shared_ptr<PhysicsComponent> otherComponent);
 	void AddVelocity (const exVector2 inVelocity);
 	void ListenForCollision(CollisionEventSignature& delegateToAdd);
+	void SetGravityEnabled(bool isOn);
 
 protected:
 
 	bool mIsStatic;
 	bool mIsGravityEnabled;
+
+	float mWeight = 5;
 
 	exVector2 mVelocity;
 

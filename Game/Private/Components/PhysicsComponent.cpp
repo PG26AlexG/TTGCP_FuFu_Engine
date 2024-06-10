@@ -20,14 +20,16 @@ void PhysicsComponent::Physics()
 		}
 		if (std::shared_ptr<TransformComponent> transformComponent = mOwner->FindComponentOfType<TransformComponent>())
 		{
-			const exVector2 newPosition = transformComponent->GetPosition() + mVelocity;
 			// @TODO add gravity
-			transformComponent->SetPosition(newPosition);
-
 			if (mIsGravityEnabled)
 			{
-				
+				AddVelocity(exVector2(0, mWeight));
 			}
+			
+			exVector2 newPosition = transformComponent->GetPosition() + mVelocity;
+
+			// Final move
+			transformComponent->SetPosition(newPosition);
 		}
 	}
 }
@@ -63,4 +65,9 @@ bool PhysicsComponent::IsCollisionDetected(std::shared_ptr<PhysicsComponent> oth
 void PhysicsComponent::ListenForCollision(CollisionEventSignature& delegateToAdd)
 {
 	mCollisionEvents.push_back(delegateToAdd);
+}
+
+void PhysicsComponent::SetGravityEnabled(bool isOn)
+{
+	mIsGravityEnabled = isOn;
 }

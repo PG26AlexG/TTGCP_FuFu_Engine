@@ -12,6 +12,16 @@ WorldManager* WorldManager::GetInstance()
 	return sInstance;
 }
 
+void WorldManager::TickActors(float deltaSeconds)
+{
+	std::list<std::shared_ptr<Actor>>::iterator it;
+
+	for (it = mActors.begin(); it != mActors.end(); ++it)
+	{
+		it->get()->Tick(deltaSeconds);
+	}
+}
+
 WorldManager::WorldManager()
 {
 }
