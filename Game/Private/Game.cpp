@@ -22,14 +22,14 @@
 
 const char* gWindowName = "Definitely not malware :3";
 
+
 //-----------------------------------------------------------------
 //-----------------------------------------------------------------
 
 MyGame::MyGame()
 	: mEngine(nullptr)
 	, mFontID(-1)
-	, mUp(false)
-	, mDown(false)
+
 {
 }
 
@@ -47,11 +47,14 @@ void MyGame::Initialize(exEngineInterface* pEngine)
 {
 	mEngine = pEngine;
 
-	Runner = WORLD->SpawnActorOfClass<Box>(exVector2{ 100.0f, 400.0f }, exColor{ 255, 255, 0, 255 }, 50.0f, 50.0f);
-	Runner->AddComponentOfType<RunnerComponent>(5);
+	Runner = WORLD->SpawnActorOfClass<Box>(exVector2{ 100.0f, 400.0f }, exColor{ 147, 16, 9, 255 }, 50.0f, 50.0f);
+	Runner->AddComponentOfType<RunnerComponent>(4);
+	Runner->AddComponentOfType<EnemySpawner>();
 	Runner->SetVelocity(exVector2(0,0));
+	Runner->AddComponentOfType<TimerComponent>();
+	Runner->FindComponentOfType<PhysicsComponent>()->weight = 0.4f;
 
-	Ground = WORLD->SpawnActorOfClass<Box>(exVector2{ 500.0f, 600.0f }, exColor{ 255, 0, 0, 255 }, 1000.0f, 100.0f);
+	Ground = WORLD->SpawnActorOfClass<Box>(exVector2{ 500.0f, 600.0f }, exColor{ 255, 255, 0, 255 }, 1000.0f, 100.0f);
 	Ground->SetVelocity(exVector2(0,0));
 	Ground->FindComponentOfType<PhysicsComponent>()->SetGravityEnabled(false);
 	Ground->FindComponentOfType<PhysicsComponent>()->mIsStatic = true;
@@ -70,9 +73,9 @@ const char* MyGame::GetWindowName() const
 
 void MyGame::GetClearColor(exColor& color) const
 {
-	color.mColor[0] = 128;
+	color.mColor[0] = 74;
 	color.mColor[1] = 128;
-	color.mColor[2] = 128;
+	color.mColor[2] = 255;
 }
 
 //-----------------------------------------------------------------
@@ -95,7 +98,6 @@ void MyGame::OnEventsConsumed()
 void MyGame::Run(float fDeltaT)
 {
 	Input::GetInstance()->CheckCurrentInputs();
-
 
 	if (mEngine)
 	{

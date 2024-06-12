@@ -13,3 +13,8 @@
 #include "Game/Private/Components/PhysicsComponent.h"
 #include "Game/Private/Components/CircleColliderPhysicsComponent.h"
 #include "Game/Private/Components/BoxColliderPhysicsComponent.h"
+
+// utilities
+#include "Game/Private/Components/TimerComponent.h"
+#include "Game/Private/Components/EnemySpawner.h"
+#include "Game/Private/Components/ObsticleComponent.h"

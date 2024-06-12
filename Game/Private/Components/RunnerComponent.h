@@ -24,6 +24,6 @@ private:
     void CheckIsGrounded(exVector2 pos, std::weak_ptr<Actor> actor, std::weak_ptr<PhysicsComponent> pc) ;
     
     // parameters
-    float mJumpForce = 25;
+    float mJumpForce = 5;
     bool mIsJumping = false;
 };

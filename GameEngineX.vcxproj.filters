@@ -56,6 +56,9 @@
     <ClInclude Include="Engine\Public\Input.h" />
     <ClInclude Include="Game\Private\Components\RunnerComponent.h" />
     <ClInclude Include="Game\Private\Components\BoxColliderPhysicsComponent.h" />
+    <ClInclude Include="Game\Private\Components\TimerComponent.h" />
+    <ClInclude Include="Game\Private\Components\EnemySpawner.h" />
+    <ClInclude Include="Game\Private\Components\ObsticleComponent.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game\Private\Main.cpp">
@@ -116,6 +119,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Game\Private\Components\BoxColliderPhysicsComponent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Private\Components\TimerComponent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Private\Components\EnemySpawner.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Private\Components\ObsticleComponent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -1,3 +1,4 @@
+C:\Users\Public\Repos\Term3\C++\Engine\TTGCP_FuFu_Engine\Game\Private\Components\EnemySpawner.cpp;C:\Users\Public\Repos\Term3\C++\Engine\TTGCP_FuFu_Engine\OutGame\EnemySpawner.obj
 C:\Users\Public\Repos\Term3\C++\Engine\TTGCP_FuFu_Engine\Game\Private\Components\BoxColliderPhysicsComponent.cpp;C:\Users\Public\Repos\Term3\C++\Engine\TTGCP_FuFu_Engine\OutGame\BoxColliderPhysicsComponent.obj
 C:\Users\Public\Repos\Term3\C++\Engine\TTGCP_FuFu_Engine\Engine\Public\Input.cpp;C:\Users\Public\Repos\Term3\C++\Engine\TTGCP_FuFu_Engine\OutGame\Input.obj
 C:\Users\Public\Repos\Term3\C++\Engine\TTGCP_FuFu_Engine\Game\Private\Actors\Box.cpp;C:\Users\Public\Repos\Term3\C++\Engine\TTGCP_FuFu_Engine\OutGame\Box.obj
@@ -18,3 +19,5 @@ C:\Users\Public\Repos\Term3\C++\Engine\TTGCP_FuFu_Engine\Game\Singletons\Physics
 C:\Users\Public\Repos\Term3\C++\Engine\TTGCP_FuFu_Engine\Game\Singletons\WorldManager.cpp;C:\Users\Public\Repos\Term3\C++\Engine\TTGCP_FuFu_Engine\OutGame\WorldManager.obj
 C:\Users\Public\Repos\Term3\C++\Engine\TTGCP_FuFu_Engine\Game\Private\Components\LineRenderComponent.cpp;C:\Users\Public\Repos\Term3\C++\Engine\TTGCP_FuFu_Engine\OutGame\LineRenderComponent.obj
 C:\Users\Public\Repos\Term3\C++\Engine\TTGCP_FuFu_Engine\Game\Private\Actors\Line.cpp;C:\Users\Public\Repos\Term3\C++\Engine\TTGCP_FuFu_Engine\OutGame\Line.obj
+C:\Users\Public\Repos\Term3\C++\Engine\TTGCP_FuFu_Engine\Game\Private\Components\TimerComponent.cpp;C:\Users\Public\Repos\Term3\C++\Engine\TTGCP_FuFu_Engine\OutGame\TimerComponent.obj
+C:\Users\Public\Repos\Term3\C++\Engine\TTGCP_FuFu_Engine\Game\Private\Components\ObsticleComponent.cpp;C:\Users\Public\Repos\Term3\C++\Engine\TTGCP_FuFu_Engine\OutGame\ObsticleComponent.obj

@@ -39,13 +39,11 @@ private:
 
 	exEngineInterface* mEngine;
 
-	int							mFontID;
+	int								mFontID;
 
-	bool						mUp;
-	bool						mDown;
+	exVector2						mTextPosition;
 
-	exVector2					mTextPosition;
+	std::shared_ptr<Box>			Runner;
+	std::shared_ptr<Box>			Ground;
 
-	std::shared_ptr<Box>		Runner;
-	std::shared_ptr<Box>		Ground;
 };
