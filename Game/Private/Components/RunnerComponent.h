@@ -21,7 +21,9 @@ private:
     std::shared_ptr<PhysicsComponent> mPhysics;
 
     void InitiateJump();
+    void CheckIsGrounded(exVector2 pos, std::weak_ptr<Actor> actor, std::weak_ptr<PhysicsComponent> pc) ;
     
     // parameters
-    float mJumpForce = 5;
+    float mJumpForce = 25;
+    bool mIsJumping = false;
 };

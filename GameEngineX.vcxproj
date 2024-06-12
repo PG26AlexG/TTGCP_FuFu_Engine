@@ -143,6 +143,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Game\Private\Components\BoxColliderPhysicsComponent.h" />
     <ClInclude Include="Engine\Public\Input.h" />
     <ClInclude Include="Game\Private\Actors\Box.h" />
     <ClInclude Include="Game\Private\Actors\Football.h" />
@@ -170,6 +171,7 @@
     <ClInclude Include="Game\Private\Actors\Line.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Game\Private\Components\BoxColliderPhysicsComponent.cpp" />
     <ClCompile Include="Engine\Public\Input.cpp" />
     <ClCompile Include="Game\Private\Actors\Box.cpp" />
     <ClCompile Include="Game\Private\Actors\Football.cpp" />

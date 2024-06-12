@@ -16,7 +16,7 @@ void Box::InitializeActor(const exVector2 spawnPosition)
 	Actor::InitializeActor(spawnPosition);
 
 	AddComponentOfType<BoxRenderComponent>(mBoxColour, mWidth, mHeight);
-	AddComponentOfType<CircleColliderPhysicsComponent>(mWidth / 2, exVector2(0, 1));
+	AddComponentOfType<BoxColliderPhysicsComponent>(mWidth, mHeight, exVector2(0, 0));
 	// @TODO square collider
 }
 
@@ -27,5 +27,15 @@ void Box::SetVelocity(const exVector2 newVelocity)
 	if (physicsComp)
 	{
 		physicsComp->SetVelocity(newVelocity);
+	}
+}
+
+void Box::OnCollisionDetected(exVector2 normal, std::weak_ptr<Actor> otherActor, std::weak_ptr<PhysicsComponent> otherComponent)
+{
+	std::shared_ptr<RendererComponent> renderComp = FindComponentOfType<RendererComponent>();
+
+	if (renderComp)
+	{
+		renderComp->SetColour(exColor{ 0, 255, 0, 255 });
 	}
 }

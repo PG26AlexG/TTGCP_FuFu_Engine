@@ -15,6 +15,8 @@ public:
 
 	virtual void SetVelocity(const exVector2 newVelocity);
 
+	void OnCollisionDetected(exVector2 normal, std::weak_ptr<Actor> otherActor, std::weak_ptr<PhysicsComponent> otherComponent);
+
 private:
 
 	exColor mBoxColour;

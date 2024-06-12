@@ -12,3 +12,4 @@
 // physics
 #include "Game/Private/Components/PhysicsComponent.h"
 #include "Game/Private/Components/CircleColliderPhysicsComponent.h"
+#include "Game/Private/Components/BoxColliderPhysicsComponent.h"

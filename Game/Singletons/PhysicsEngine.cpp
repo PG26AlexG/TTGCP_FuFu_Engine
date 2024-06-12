@@ -36,8 +36,11 @@ void PhysicsEngine::Physics()
                         if (componentToPhysics.lock()->IsCollisionDetected(otherPhysicsComponent.lock()))
                         {
                             // @TODO change resolution based on requirement
-                            const exVector2 newVelocity = componentToPhysics.lock()->GetVelocity() * -1.0f;
-                            componentToPhysics.lock()->SetVelocity(newVelocity);
+                            if (!componentToPhysics.lock()->mIsStatic)
+                            {
+                                const exVector2 newVelocity = (componentToPhysics.lock()->GetVelocity() * -0.1f) - exVector2(0.0f, componentToPhysics.lock()->weight);
+                                componentToPhysics.lock()->SetVelocity(newVelocity);
+                            }
 
                             // call collision events
                             for (CollisionEventSignature& collisionEvent : componentToPhysics.lock()->mCollisionEvents)

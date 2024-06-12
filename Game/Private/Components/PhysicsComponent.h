@@ -34,12 +34,12 @@ public:
 	void ListenForCollision(CollisionEventSignature& delegateToAdd);
 	void SetGravityEnabled(bool isOn);
 
+	float weight = 1;
+	bool mIsStatic;
+
 protected:
 
-	bool mIsStatic;
 	bool mIsGravityEnabled;
-
-	float mWeight = 5;
 
 	exVector2 mVelocity;
 

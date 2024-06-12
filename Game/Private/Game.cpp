@@ -47,22 +47,14 @@ void MyGame::Initialize(exEngineInterface* pEngine)
 {
 	mEngine = pEngine;
 
-	mFontID = mEngine->LoadFont("Resources/BlackOpsOne-Regular.ttf", 32);
-
-	mTextPosition.x = 50.0f;
-	mTextPosition.y = 50.0f;
-
-	Runner = WORLD->SpawnActorOfClass<Football>(exVector2{ 700.0f, 400.0f }, exColor{ 255, 255, 0, 255 }, 50.0f);
-
+	Runner = WORLD->SpawnActorOfClass<Box>(exVector2{ 100.0f, 400.0f }, exColor{ 255, 255, 0, 255 }, 50.0f, 50.0f);
 	Runner->AddComponentOfType<RunnerComponent>(5);
 	Runner->SetVelocity(exVector2(0,0));
-	//HenrysHead = WORLD->SpawnActorOfClass<Football>(exVector2{ 100.0f, 400.0f }, exColor{ 255, 255, 0, 255 }, 150.0f);
 
-	Ground = WORLD->SpawnActorOfClass<Box>(exVector2{ 500.0f, 600.0f }, exColor{ 0, 255, 0, 255 }, 1000.0f, 100.0f);
+	Ground = WORLD->SpawnActorOfClass<Box>(exVector2{ 500.0f, 600.0f }, exColor{ 255, 0, 0, 255 }, 1000.0f, 100.0f);
 	Ground->SetVelocity(exVector2(0,0));
 	Ground->FindComponentOfType<PhysicsComponent>()->SetGravityEnabled(false);
-	
-	//GameDesignersLeftLeg = WORLD->SpawnActorOfClass<Line>(exVector2{ 200.0f, 400.0f }, exColor{ 0, 0, 0, 255 }, exVector2{ 200.0f, 400.0f }, exVector2{ 400.0f, 400.0f });
+	Ground->FindComponentOfType<PhysicsComponent>()->mIsStatic = true;
 }
 
 //-----------------------------------------------------------------
@@ -95,11 +87,6 @@ void MyGame::OnEvent(SDL_Event* pEvent)
 
 void MyGame::OnEventsConsumed()
 {
-	int nKeys = 0;
-	const Uint8* pState = SDL_GetKeyboardState(&nKeys);
-
-	mUp = pState[SDL_SCANCODE_UP];
-	mDown = pState[SDL_SCANCODE_DOWN];
 }
 
 //-----------------------------------------------------------------

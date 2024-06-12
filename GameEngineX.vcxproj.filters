@@ -53,6 +53,9 @@
     <ClInclude Include="Game\Private\Actors\Box.h" />
     <ClInclude Include="Game\Private\Components\LineRenderComponent.h" />
     <ClInclude Include="Game\Private\Actors\Line.h" />
+    <ClInclude Include="Engine\Public\Input.h" />
+    <ClInclude Include="Game\Private\Components\RunnerComponent.h" />
+    <ClInclude Include="Game\Private\Components\BoxColliderPhysicsComponent.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game\Private\Main.cpp">
@@ -104,6 +107,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Game\Private\Actors\Line.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Public\Input.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Private\Components\RunnerComponent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Private\Components\BoxColliderPhysicsComponent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

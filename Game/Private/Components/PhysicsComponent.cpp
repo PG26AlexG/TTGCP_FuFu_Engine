@@ -23,7 +23,7 @@ void PhysicsComponent::Physics()
 			// @TODO add gravity
 			if (mIsGravityEnabled)
 			{
-				AddVelocity(exVector2(0, mWeight));
+				AddVelocity(exVector2(0, weight));
 			}
 			
 			exVector2 newPosition = transformComponent->GetPosition() + mVelocity;
